@@ -1,0 +1,32 @@
+{
+  "name": "node-zenhub",
+  "version": "0.1.0",
+  "description": "ZenHub API wrapper",
+  "author": "Matteo Magni <matteo@magni.me> (magni.me)",
+  "license": "MIT",
+  "keywords": [
+    "zenhub",
+    "zenhub-api"
+  ],
+  "homepage": "https://github.com/ilbonzo/zenhub-api",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilbonzo/node-zenhub.git"
+  },
+  "main": "./lib/zenhub.js",
+  "directories": {
+    "test": "test"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "dependencies": {
+    "request": "2.x"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
+}
