@@ -29,4 +29,19 @@ describe('ZenHub API', function() {
         });
     });
 
+    describe('Board epics test', function() {
+        it('should get all epics in a board of repo', function(done) {
+            api.getEpics(config.repoId, done);
+        });
+        it('should get all data for an epic', function(done) {
+            var self = this;
+            api.getEpics(config.repoId, function(error, response) {
+                if (response.epic_issues.length === 0) {
+                    return self.skip();
+                }
+                api.getEpicData(config.repoId, response.epic_issues[0].issue_number, done);
+            });
+        });
+    });
+
 });
