@@ -7,7 +7,7 @@ var path = require('path');
 
 var config = JSON.parse(fs.readFileSync(path.normalize(__dirname + '/config.json', 'utf8')));
 
-describe('ZenHub API', function() {
+describe('ZenHub Read API', function() {
     var Zenhub = require('../lib/zenhub');
     var api = new Zenhub(config.token);
 
