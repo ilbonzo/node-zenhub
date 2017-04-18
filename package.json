@@ -24,7 +24,8 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "request": "2.x"
+    "request": "2.x",
+    "xtend": "^4.0.1"
   },
   "devDependencies": {
     "mocha": "^3.1.0",
