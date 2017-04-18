@@ -5,7 +5,17 @@
 var fs = require('fs');
 var path = require('path');
 
-var config = JSON.parse(fs.readFileSync(path.normalize(__dirname + '/config.json', 'utf8')));
+var config;
+
+if (typeof process.env.TOKEN !== 'undefined') {
+    config = {
+        'token': process.env.TOKEN,
+        'repoId': process.env.REPO_ID,
+        'issueId': process.env.ISSUE_ID
+    };
+} else {
+    config = JSON.parse(fs.readFileSync(path.normalize(__dirname + '/config.json', 'utf8')));
+}
 
 describe('ZenHub Read API', function() {
     var Zenhub = require('../lib/zenhub');
