@@ -1,5 +1,7 @@
 # node-zenhub
 
+[![Build Status](https://travis-ci.org/ilbonzo/node-zenhub.svg?branch=master)](https://travis-ci.org/ilbonzo/node-zenhub)
+
 ### A Node.js wrapper for the ZenHub API
 
 ### Install
