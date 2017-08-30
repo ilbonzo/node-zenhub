@@ -64,4 +64,19 @@ describe('ZenHub Write API', function() {
             api.convertIssueToEpic(repoId, issueId, payload, done);
        });
     });
+
+    describe('Set estimate for issue test', function() {
+        var issueId = 457;
+
+        it('should send payload to the ZenHub API', function(done) {
+            var payload = {
+                estimate: 8
+            };
+            nock('https://api.zenhub.io/p1')
+                .put('/repositories/' + repoId + '/issues/' + issueId + '/estimate' + tokenQueryString, payload)
+                .reply(200, { status: 'OK' });
+            api.setEstimateForIssue(repoId, issueId, payload, done);
+       });
+    });
+
 });
