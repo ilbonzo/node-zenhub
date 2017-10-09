@@ -10,7 +10,9 @@
   ],
   "homepage": "https://github.com/ilbonzo/node-zenhub",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha test"
+    "test": "node_modules/.bin/mocha test",
+    "coverage": "node node_modules/.bin/istanbul cover _mocha -- -R spec",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,8 @@
     "xtend": "^4.0.1"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.0",
     "nock": "^9.0.11"
   }
