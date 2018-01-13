@@ -67,5 +67,8 @@ Please raise an issue on GitHub with as much information as possible and the ste
 
 MIT license. See the LICENSE file for details.
 
+---
+Fork me on [github](https://github.com/ilbonzo/node-zenhub)
 
+Created by [@ilbonzo](https://twitter.com/ilbonzo)
 
