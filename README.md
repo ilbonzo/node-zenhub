@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/ilbonzo/node-zenhub.svg?branch=master)](https://travis-ci.org/ilbonzo/node-zenhub)
 [![Coverage Status](https://coveralls.io/repos/github/ilbonzo/node-zenhub/badge.svg?branch=master)](https://coveralls.io/github/ilbonzo/node-zenhub?branch=master)
 [![Dependencies Status](https://david-dm.org/ilbonzo/node-zenhub.svg)](https://david-dm.org/ilbonzo/node-zenhub)
+[![BCH compliance](https://bettercodehub.com/edge/badge/ilbonzo/node-zenhub?branch=master)](https://bettercodehub.com/)
 
 ### A Node.js wrapper for the ZenHub API
 
