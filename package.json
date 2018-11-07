@@ -1,6 +1,6 @@
 {
   "name": "node-zenhub",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "ZenHub API wrapper",
   "author": "Matteo Magni <matteo@magni.me> (magni.me)",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "test": "test"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=5.0.0"
   },
   "dependencies": {
     "request": "^2.88.0",
