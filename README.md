@@ -79,7 +79,7 @@ create file test/config.json from test/config.sample.json with your values
     "token": "xxxxxxxxxx",
     "repoId": "xxxxx",
     "issueId": 1,
-    "milesteonNumber": 1
+    "milestoneNumber": 1
 }
 
 ```
