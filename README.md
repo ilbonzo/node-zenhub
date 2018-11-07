@@ -56,7 +56,7 @@ create file test/config.json from test/config.sample.json with your values
 
 At the moment, test classes can only be run separately. This will e.g. run the Issues Api test:
 ```shell
-node_modules/mocha/bin/mocha test
+npm test
 ```
 
 ### Issues
