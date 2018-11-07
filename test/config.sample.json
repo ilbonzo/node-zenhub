@@ -1,5 +1,6 @@
 {
     "token": "xxxxxxxxxx",
     "repoId": "xxxxx",
-    "issueId": 1
+    "issueId": 1,
+    "milestoneId": 1
 }

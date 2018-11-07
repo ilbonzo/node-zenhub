@@ -33,10 +33,39 @@ $ npm install --save node-zenhub
 Once installed you need to instantiate a new copy of ```node-zenhub``` in your application, like so:
 
 ```js
+var callback = function (error, data) {
+    console.log(error);
+    console.log(data);
+}
+
 var ZenHub = require('node-zenhub'),
     api = new ZenHub('[token]');
+
+api.boards.getBoard('[repoId]', callback);
 ```
 *Note: replace [token] with your token.*
+
+
+## Available methods
+
+**Issues**
+- [getIssue](https://github.com/ZenHubIO/API#get-issue-data)
+- [getIssueEvents](https://github.com/ZenHubIO/API#get-issue-events)
+- [setEstimateForIssue](https://github.com/ZenHubIO/API#set-estimate-for-issue)
+
+**Boards**
+- [getBoard](https://github.com/ZenHubIO/API#get-the-zenhub-board-data-for-a-repository)
+
+**Epics**
+- [getEpics](https://github.com/ZenHubIO/API#get-epics-for-a-repository)
+- [getEpicData](https://github.com/ZenHubIO/API#get-epic-data)
+- [convertIssueToEpic](https://github.com/ZenHubIO/API#convert-issue-to-epic)
+- [convertEpicToIssue](https://github.com/ZenHubIO/API#convert-epic-to-issue)
+- [addOrRemoveToEpic](https://github.com/ZenHubIO/API#add-or-remove-issues-to-epic)
+
+**Milestones**
+- [getMilestoneStartDate](https://github.com/ZenHubIO/API#get-milestone-start-date)
+- [setMilestoneStartDate](https://github.com/ZenHubIO/API#set-milestone-start-date)
 
 ## Running the Tests
 
@@ -49,7 +78,8 @@ create file test/config.json from test/config.sample.json with your values
 {
     "token": "xxxxxxxxxx",
     "repoId": "xxxxx",
-    "issueId": 1
+    "issueId": 1,
+    "milesteonNumber": 1
 }
 
 ```
