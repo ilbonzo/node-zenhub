@@ -2,5 +2,6 @@
     "token": "xxxxxxxxxx",
     "repoId": "xxxxx",
     "issueId": 1,
-    "milestoneId": 1
+    "milestoneId": 1,
+    "releaseId": "59d3cd520a430a6344fd3bdb"
 }

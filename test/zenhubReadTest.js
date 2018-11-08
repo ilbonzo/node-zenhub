@@ -13,6 +13,7 @@ if (typeof process.env.TOKEN !== 'undefined') {
         'repoId': process.env.REPO_ID,
         'issueId': process.env.ISSUE_ID,
         'milestoneId': process.env.MILESTONE_ID,
+        'releaseId': process.env.RELEASE_ID
     };
 } else {
     config = JSON.parse(fs.readFileSync(path.normalize(__dirname + '/config.json', 'utf8')));
@@ -73,6 +74,23 @@ describe('ZenHub Milestones Read API', function() {
     describe('Repository Milestones test', function() {
         it('should get Milestone startDate', function(done) {
             api.milestones.getMilestoneStartDate(config.repoId, config.milestoneNumber, done);
+        });
+    });
+});
+
+describe('ZenHub ReleaseReport Read API', function() {
+    var Zenhub = require('../lib/zenhub');
+    var api = new Zenhub(config.token);
+
+    describe('Get ReleaseReport test', function() {
+        it('should get ReleaseReport', function(done) {
+            api.releaseReports.getReleaseReport(config.releaseId, done);
+        });
+    });
+
+    describe('get ReleaseReports for Repository test', function() {
+        it('should get ReleaseReports for repository', function(done) {
+            api.releaseReports.getReleaseReportsForRepository(config.repoId, done);
         });
     });
 });

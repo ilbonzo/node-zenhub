@@ -67,6 +67,12 @@ api.boards.getBoard('[repoId]', callback);
 - [getMilestoneStartDate](https://github.com/ZenHubIO/API#get-milestone-start-date)
 - [setMilestoneStartDate](https://github.com/ZenHubIO/API#set-milestone-start-date)
 
+**Release Reports**
+- [createReleaseReport](https://github.com/ZenHubIO/API#create-a-release-report)
+- [getReleaseReport](https://github.com/ZenHubIO/API#get-a-release-report)
+- [getReleaseReportsForRepository](https://github.com/ZenHubIO/API#get-release-reports-for-a-repository)
+
+
 ## Running the Tests
 
 The tests are based on the [mocha](http://mochajs.org/)
@@ -79,7 +85,8 @@ create file test/config.json from test/config.sample.json with your values
     "token": "xxxxxxxxxx",
     "repoId": "xxxxx",
     "issueId": 1,
-    "milestoneNumber": 1
+    "milestoneNumber": 1,
+    "releaseId": "59d3cd520a430a6344fd3bdb"
 }
 
 ```
