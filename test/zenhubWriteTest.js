@@ -105,3 +105,26 @@ describe('ZenHub Write API', function() {
         });
     });
 });
+
+describe('ZenHub RealaseReports Write API', function() {
+    var Zenhub = require('../lib/zenhub');
+    var api = new Zenhub(token);
+
+    describe('Repository Create a Release Report', function() {
+        it('should create a release report', function(done) {
+            var payload = {
+                title: 'Mayonaise',
+                description: 'Siamese Dream Song',
+                start_date: '2018-11-07T01:38:56.842Z',
+                desired_end_date: '2018-11-14T01:38:56.842Z',
+                repositories: [
+                    101231
+                ]
+            };
+            nock('https://api.zenhub.io/p1')
+                .post('/repositories/' + repoId + '/reports/release' + tokenQueryString, payload)
+                .reply(200, { status: 'OK' });
+            api.releaseReports.createReleaseReport(repoId,  payload, done);
+        });
+    });
+});
