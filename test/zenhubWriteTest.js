@@ -13,6 +13,31 @@ describe('ZenHub Write API', function() {
         assert(nock.isDone(), 'not all expected HTTP requests were made');
     });
 
+    describe('Issues test', function() {
+        var issueId = 457;
+
+        it('Set estimate for issue test', function(done) {
+            var payload = {
+                estimate: 8
+            };
+            nock('https://api.zenhub.io/p1')
+                .put('/repositories/' + repoId + '/issues/' + issueId + '/estimate' + tokenQueryString, payload)
+                .reply(200, { status: 'OK' });
+            api.issues.setEstimateForIssue(repoId, issueId, payload, done);
+        });
+
+        it('Move issue between pipelines test', function(done) {
+            var payload = {
+                pipeline_id: '595d430add03f01d32460080',
+                position: 1
+            };
+            nock('https://api.zenhub.io/p1')
+                .post('/repositories/' + repoId + '/issues/' + issueId + '/moves' + tokenQueryString, payload)
+                .reply(200, { status: 'OK' });
+            api.issues.moveIssueBetweenPipelines(repoId, issueId, payload, done);
+        });
+    });
+    
     describe('Add/remove issues to epic test', function() {
         var epicId = 123;
 
@@ -74,20 +99,6 @@ describe('ZenHub Write API', function() {
                 .post('/repositories/' + repoId + '/epics/' + epicId + '/convert_to_issue' + tokenQueryString, payload)
                 .reply(200, { status: 'OK' });
             api.epics.convertEpicToIssue(repoId, epicId, payload, done);
-        });
-    });
-
-    describe('Set estimate for issue test', function() {
-        var issueId = 457;
-
-        it('should send payload to the ZenHub API', function(done) {
-            var payload = {
-                estimate: 8
-            };
-            nock('https://api.zenhub.io/p1')
-                .put('/repositories/' + repoId + '/issues/' + issueId + '/estimate' + tokenQueryString, payload)
-                .reply(200, { status: 'OK' });
-            api.issues.setEstimateForIssue(repoId, issueId, payload, done);
         });
     });
 

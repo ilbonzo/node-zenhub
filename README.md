@@ -52,6 +52,7 @@ api.boards.getBoard('[repoId]', callback);
 - [getIssue](https://github.com/ZenHubIO/API#get-issue-data)
 - [getIssueEvents](https://github.com/ZenHubIO/API#get-issue-events)
 - [setEstimateForIssue](https://github.com/ZenHubIO/API#set-estimate-for-issue)
+- [moveIssueBetweenPipelines](https://github.com/ZenHubIO/API#move-an-issue-between-pipelines)
 
 **Boards**
 - [getBoard](https://github.com/ZenHubIO/API#get-the-zenhub-board-data-for-a-repository)
