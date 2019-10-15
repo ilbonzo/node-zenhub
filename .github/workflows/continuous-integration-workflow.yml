@@ -3,12 +3,11 @@ on: [push]
 
 jobs:
   build:
-    name: RunTest
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-18.04
     strategy:
       matrix:
-        os: [ubuntu-18.04]
-        node: [6, 8, 10]
+        node: ['10', '8']
+    name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v1
       - name: Setup node
