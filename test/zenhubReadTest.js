@@ -58,7 +58,7 @@ describe('ZenHub Epics Read API', function() {
         it('should get all data for an epic', function(done) {
             var self = this;
             api.epics.getEpics(config.repoId, function(error, response) {
-                if (response.epic_issues.length === 0) {
+                if (typeof response.epic_issues === 'undefined' || response.epic_issues.length === 0) {
                     return self.skip();
                 }
                 api.epics.getEpicData(config.repoId, response.epic_issues[0].issue_number, done);
