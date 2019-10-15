@@ -1,4 +1,4 @@
-name: Run test
+name: Run Coverage
 on: [push]
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
-      - run: npm test
+      - run: npm rnu coverage
