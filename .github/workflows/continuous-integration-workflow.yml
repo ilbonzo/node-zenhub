@@ -1,4 +1,4 @@
-name: Run Test and Coverage
+name: test and coverage
 on: [push]
 
 jobs:
