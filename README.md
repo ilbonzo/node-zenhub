@@ -45,7 +45,8 @@ var ZenHub = require('node-zenhub'),
 api.boards.getBoard('[repoId]', callback);
 ```
 *Note: replace [token] with your token.*
-*Note: [zenhub_api_url] is optional, you can use it with enterprise versions with custom URL
+
+*Note: [zenhub_api_url] is optional, you can use it with enterprise versions with custom URL*
 
 
 ## Available methods
