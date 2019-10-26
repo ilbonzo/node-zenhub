@@ -40,11 +40,12 @@ var callback = function (error, data) {
 }
 
 var ZenHub = require('node-zenhub'),
-    api = new ZenHub('[token]');
+    api = new ZenHub('[token]', [zenhub_api_url]);
 
 api.boards.getBoard('[repoId]', callback);
 ```
 *Note: replace [token] with your token.*
+*Note: [zenhub_api_url] is optional, you can use it with enterprise versions with custom URL
 
 
 ## Available methods
@@ -88,7 +89,8 @@ create file test/config.json from test/config.sample.json with your values
     "repoId": "xxxxx",
     "issueId": 1,
     "milestoneNumber": 1,
-    "releaseId": "59d3cd520a430a6344fd3bdb"
+    "releaseId": "59d3cd520a430a6344fd3bdb",
+    "zenhubAPI": "https://zenhub.enterprise.com"
 }
 
 ```
