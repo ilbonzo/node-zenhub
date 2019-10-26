@@ -13,7 +13,9 @@ if (typeof process.env.TOKEN !== 'undefined') {
         'repoId': process.env.REPO_ID,
         'issueId': process.env.ISSUE_ID,
         'milestoneId': process.env.MILESTONE_ID,
-        'releaseId': process.env.RELEASE_ID
+        'releaseId': process.env.RELEASE_ID,
+        'zenhubAPI': process.env.ZENHUB_API
+
     };
 } else {
     config = JSON.parse(fs.readFileSync(path.normalize(__dirname + '/config.json', 'utf8')));
@@ -91,6 +93,18 @@ describe('ZenHub ReleaseReport Read API', function() {
     describe('get ReleaseReports for Repository test', function() {
         it('should get ReleaseReports for repository', function(done) {
             api.releaseReports.getReleaseReportsForRepository(config.repoId, done);
+        });
+    });
+});
+
+describe('node-zenhub custom API URL', function() {
+    var Zenhub = require('../lib/zenhub');
+    var api = new Zenhub(config.token, config.zenhubAPI);
+
+    describe('get custom zenhub api', function () {
+        it('should get an API URL that is not https://api.zenhub.io/p1', function (done) {
+            if (api._http.api_url !== config.zenhubAPI) done(err);
+            else done();
         });
     });
 });
