@@ -1,6 +1,6 @@
 {
   "name": "node-zenhub",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "ZenHub API wrapper",
   "author": "Matteo Magni <matteo@magni.me> (magni.me)",
   "license": "MIT",
